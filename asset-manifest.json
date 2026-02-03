@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/router-project-studyNotation/static/css/main.ea67407d.css",
+    "main.js": "/router-project-studyNotation/static/js/main.c460812a.js",
+    "static/media/signup.png": "/router-project-studyNotation/static/media/signup.b431d919de01b6515dd6.png",
+    "static/media/login.png": "/router-project-studyNotation/static/media/login.4d877a447365e5137b67.png",
+    "static/media/frame.png": "/router-project-studyNotation/static/media/frame.3a238e5f26d676376e1d.png",
+    "static/media/Logo.svg": "/router-project-studyNotation/static/media/Logo.0d90853fa1468dbe2d8d82c0ea06b8b1.svg",
+    "index.html": "/router-project-studyNotation/index.html",
+    "main.ea67407d.css.map": "/router-project-studyNotation/static/css/main.ea67407d.css.map",
+    "main.c460812a.js.map": "/router-project-studyNotation/static/js/main.c460812a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea67407d.css",
+    "static/js/main.c460812a.js"
+  ]
+}
