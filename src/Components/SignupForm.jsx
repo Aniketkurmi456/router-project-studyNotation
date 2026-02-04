@@ -22,15 +22,11 @@ const SignupForm = (props) => {
   });
 
   function changeHandler(event) {
-    setFormData([
-      (prev) => [
-        {
-          ...prev,
-          [event.target.name]: event.target.value,
-        },
-      ],
-    ]);
-  }
+  setFormData((prev) => ({
+    ...prev,
+    [event.target.name]: event.target.value,
+  }));
+}
 
   function submitHandler(e) {
     e.preventDefault();
@@ -53,7 +49,7 @@ const SignupForm = (props) => {
     <div>
       <div className="flex bg-richblack-800 p-1 gap-x-1 rounded-full max-w-max">
         <button
-          onclick={() => setAccountType("student")}
+          onClick={() => setAccountType("student")}
           className={`${
             accountType === "student"
               ? "bg-richblack-900 text-richblack-5"
@@ -63,7 +59,7 @@ const SignupForm = (props) => {
           Student
         </button>
         <button
-          onclick={() => setAccountType("instructor")}
+          onClick={() => setAccountType("instructor")}
           className={`${
             accountType === "instructor"
               ? "bg-richblack-900 text-richblack-5"
@@ -125,32 +121,34 @@ const SignupForm = (props) => {
         </label>
 
         <div className="flex gap-x-4">
-          <label htmlFor="w-full relative">
-            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
-              Create Password
-              <sup className="text-pink-200">*</sup>
+          <label className="w-full">
+            <p className="text-[0.875rem] text-richblack-5 mb-1">
+              Create Password <sup className="text-pink-200">*</sup>
             </p>
 
-            <input
-              type={showCreatePass ? "text" : "password"}
-              required
-              placeholder="Enter Password"
-              onChange={changeHandler}
-              value={formData.password}
-              name="password"
-              className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
-            />
-            <span
-              onClick={() => setShowCreatePass(!showCreatePass)}
-              className="absolute right-3 top-[38px] cursor-pointer z-10"
-            >
-              {showCreatePass ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
-              ) : (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
-              )}
-            </span>
+            <div className="relative w-full">
+              <input
+                type={showCreatePass ? "text" : "password"}
+                name="password"
+                value={formData.password}
+                onChange={changeHandler}
+                placeholder="Enter Password"
+                className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] pr-10 text-richblack-5"
+              />
+
+              <span
+                onClick={() => setShowCreatePass(!showCreatePass)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+              >
+                {showCreatePass ? (
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                  )}
+              </span>
+            </div>
           </label>
+
 
           <label htmlFor="" className="w-full relative">
             <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
@@ -181,7 +179,10 @@ const SignupForm = (props) => {
           </label>
         </div>
 
-        <button className="bg-yellow-50 py-[8px] px-[12px] rounded-[8px] mt-6 font-medium text-richblack-900 w-full">
+        <button 
+          type="submit"
+          className="bg-yellow-50 py-[8px] px-[12px] rounded-[8px] mt-6 font-medium text-richblack-900 w-full"
+        >
           Create Account
         </button>
       </form>

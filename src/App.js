@@ -5,7 +5,7 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Signup from "./Components/Signup";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./Components/PrivateRoute";
 import { Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

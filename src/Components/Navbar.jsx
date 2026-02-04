@@ -31,7 +31,7 @@ const Navbar = (props) => {
       <div className="flex items-center gap-x-4 text-richblack-100">
         {!isLoggedIn && (
           <Link to="/login">
-            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
+            <button className="bg-richblack-800  py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
               Login
             </button>
           </Link>
